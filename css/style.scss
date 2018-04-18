@@ -1,0 +1,934 @@
+/*----code by Dina Khaled 2017----*/
+/*--------------------------------------------------------------*/
+// start var
+$mainColor :#ff8b38 ;
+$headlineColor:#333333;
+$pColor:#86878b;
+// end var
+
+// start mixin
+@mixin transition {
+	-webkit-transition:all 0.5s ease-in-out;
+	-moz-transition:all 0.5s ease-in-out;
+	-o-transition:all 0.5s ease-in-out;
+	transition:all 0.5s ease-in-out;
+}
+@mixin transform($trans) {
+	-webkit-transform:$trans;
+	-moz-transform:$trans;
+	-o-transform:$trans;
+	transform:$trans;	
+}
+@mixin bgcover {
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	background-size:cover;
+}
+@mixin boxshadow ($b) {
+	-webkit-box-shadow:$b;
+	-moz-box-shadow:$b;
+	-o-box-shadow:$b;
+	box-shadow:$b;
+}
+
+// end mixin
+
+* {
+	-webkit-box-sizing :border-box;
+	-moz-box-sizing :border-box;
+	-o-box-sizing :border-box;
+	box-sizing :border-box;
+}
+body {
+	background-color: #f5f5f5;
+}
+
+//Start Navbar
+nav {
+	height: 60px;
+}
+.navbar-inverse {
+	background-color: #000;
+	border-color: #000;
+}
+.navbar-inverse{
+	.navbar-collapse ,.navbar-form{
+		margin-top: 5px;
+	}
+} 
+.navbar-brand>img {
+	margin-top: 4px;
+}
+.navbar-inverse{
+	.navbar-nav>li {
+		color: #cacaca;
+		border-bottom:4px solid black;
+		margin-right: 15px;
+		&:hover {
+		border-color: $mainColor;                              
+		}
+	}
+}  
+.navbar-inverse {
+	.navbar-nav>li.active {
+		border-color: $mainColor;
+		color: #FFF;
+	}
+} 
+// /Navbar
+
+//Start Home
+.home {
+	background:url(../images/homephoto.jpg) no-repeat center fixed;
+	min-height: 700px;
+	@include bgcover;
+}
+.home{
+	.overlay {
+		background: rgba(2,2,2,0.5);
+		min-height: 700px;
+	}
+	.companyname {
+		color: #FFF;
+		font-size: 70px;
+		font-weight: bold;
+		span{
+		color: $mainColor;
+		font-weight: normal !important;
+		}
+	}
+	h2 {
+		color: #FFF;
+		line-height: 1.2;
+	}
+	.home-hr{
+		width: 70px;
+		margin-left: 0;
+		margin-top: 30px;
+	}
+	p {
+		color: #BCBCBC;
+		margin-top: 30px;
+		line-height: 1.6;
+	}
+	.download {
+		background-color: transparent;
+		border: 2px solid #FFF;
+		padding: 6px 25px;
+		color: #FFF;
+		margin-top: 30px;
+		@include transition;
+		&:hover{
+		background-color: $mainColor;
+		border:2px solid $mainColor;
+		@include transform (scale(1.1,1.1));
+		}
+	}
+	form {
+		width: 380px;
+		background-color: #FFF;
+		border-radius: 5px;
+		h2{
+			background-color: #f5f5f5;
+			color: #333333;
+			font-size: 18px;
+			font-weight: bold;
+			padding: 15px;
+			border-radius: 5px;
+			margin-bottom: 30px;
+			span{
+				color: $mainColor;
+			}	
+		}
+		.form-control {
+			border-radius: 0;
+			border:none;
+			@include boxshadow (none);
+			border-bottom: 1px solid #CCC;
+			width: 80%;
+			margin: 0 auto 40px;
+		}
+		button {
+			background-color: $mainColor;
+			border-color:  $mainColor;
+			padding: 15px;
+			&:hover{
+				background-color: #ee8235;
+				border-color: #ee8235;
+			}
+		}
+		a:hover {
+			text-decoration: none;
+		}
+	}
+} 
+.center-screen {
+	margin-top: 15vh;
+}
+// /Home
+
+// social media
+.social-media {
+	min-height: 105px;
+	background-color: #FFF;
+	padding: 22px 0 ;
+	@include boxshadow (0px 0px 4px #777);
+	z-index: 55;
+	h2 {
+		color: $headlineColor;
+		font-size: 22px;
+		font-weight: bold;
+		margin-top: 0;
+	}
+	p{
+	  color:$pColor;
+	  margin-bottom: 0;
+	}
+	a {
+		text-decoration: none;
+	}
+	i{
+		color: #cccccc;
+		font-size: 40px;
+		padding: 0 30px;
+		margin-top: 20px;
+		@include transition;
+		&:hover{
+			color: $mainColor;
+			@include transform (scale(1.1,1.1));
+		}
+	}
+}
+.tabs {
+	padding: 140px 0 ;
+	background-color: #f5f5f5;
+	margin-top: 8px;
+	.tab {
+		padding: 50px 34px;
+		background-color: #333333;
+		width: 111px;
+		height: 111px;
+		color: #FFF;
+		margin-bottom: 1px;
+		cursor: pointer;
+		font-weight: bold;
+	}
+	.tab-active {
+		background-color: $mainColor;
+	}
+	h2 {
+		font-weight: bold;
+		font-size: 24px;
+		margin: 0px;
+		padding-bottom: 50px;
+		margin-top: 10px;
+	}
+	p{
+		padding-bottom:40px;
+		color: $pColor;
+		font-size: 14px;
+		width: 480px;
+	}
+	.spical-p {
+		color: $pColor;
+		padding-bottom:15px;
+		font-size: 14px;
+	}
+	button {
+		color: #FFF;
+		background-color: $mainColor;
+		font-size: 16px;
+		padding: 10px 22px;
+		border-color: $mainColor;
+		border-radius: 3px;
+		@include transition;
+		&:hover{
+		background-color: #333333;
+		}
+	}
+	.tab-content {
+		div:not(.tab-one){
+			display: none;
+		}
+	}
+	img{
+		margin-top: 50px;
+		@include transition;
+		&:hover{
+			@include transform (scale(1.1,1.1));
+		}
+	}
+}
+// /social media
+
+// about section
+.about-section {
+	background-color: #FFF;
+	padding: 110px 0 ;
+	img{
+		@include boxshadow (6px 10px 25px #aaa);
+		@include transition;
+		margin-top: 50px;
+		&:hover{
+			@include transform (scale(1.1,1.1));
+		}
+	}
+	h2{
+		font-weight: bold;
+		font-size: 24px;
+		margin: 0px;
+		padding-bottom: 55px;
+		margin-top: 10px;
+	}
+	h2:after{
+	content: "";
+    display: block;
+    position: absolute;
+    top: 65px;
+    left: 16px;
+    width: 77px;
+    border-bottom: 2px solid $mainColor;
+	}
+	p{
+		color: $pColor;
+		font-size: 14px;
+		width: 450px;
+		padding-bottom: 30px;
+	}
+	i{
+		font-size: 22px;
+		line-height: 36px;
+		text-align: center;
+		color: $mainColor;
+		background-color: #FFF;
+		border:2px solid $mainColor;
+		border-radius: 50%;
+		margin-right: 20px;
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+		float: left;
+		margin-top: 4px;
+		@include transition;
+		&:hover{
+			background-color: $mainColor;
+			color: #FFF;	
+		}
+	}
+	.title-info {
+		width: calc(100% - 70px);
+		p{
+			margin-left: 60px;
+		}
+		.p-b{
+			padding-bottom: 0;
+		}
+	}	
+}
+.about-2-section {
+	@extend .about-section;
+		background-color: #f5f5f5;
+	img {
+		float: right;
+		margin-top: 0px;
+	}
+	p{
+		width: 500px;
+	}
+}
+// /about section
+
+// services section
+.services {
+	padding: 105px 0px;
+	background-color: #FFF;
+	position: relative;
+	.services-headline {
+		h1{
+		margin: 0px;
+		padding-bottom: 55px;
+		margin-top: 10px;
+		}
+		h1:after{
+		content: "";
+	    display: block;
+	    position: absolute;
+	    top: 180px;
+   		left: 639px;
+	    width: 77px;
+	    border-bottom: 2px solid $mainColor;
+		}
+		p{
+			color: $pColor;
+			font-size: 14px;
+			padding-bottom: 70px;
+		}
+	}
+	.products {
+		i{
+		font-size: 26px;
+		line-height: 57px;
+		text-align: center;
+		color: $mainColor;
+		background-color: #FFF;
+		border:2px solid $mainColor;
+		border-radius: 50%;
+		width: 60px;
+		height: 60px;
+		@include transition;
+		margin-bottom: 20px;
+		&:hover{
+			background-color: $mainColor;
+			color: #FFF;
+			@include transform (rotate(360deg));
+		}
+		}
+		h4 {
+			font-weight: bold;
+			margin-bottom: 20px;
+		}
+		p{
+			color: $pColor;
+			font-size: 14px;
+		}
+	}
+}
+// /services section
+
+// pricing section
+.pricing {
+	padding: 105px 0px;
+	position: relative;
+	.pricing-headline {
+		h1{
+		margin: 0px;
+		padding-bottom: 55px;
+		margin-top: 10px;
+		}
+		h1:after{
+		content: "";
+	    display: block;
+	    position: absolute;
+	    top: 180px;
+   		left: 639px;
+	    width: 77px;
+	    border-bottom: 2px solid $mainColor;
+		}
+		p{
+			color: $pColor;
+			font-size: 14px;
+			padding-bottom: 90px;
+		}
+	}
+	.b-head {
+		background-color: #333333;
+		color: #FFF;
+		h4 {
+			padding: 18px 0;
+			border-bottom: 1px solid #f5f5f5;
+		}
+		.price-num{
+			font-size: 80px;
+			font-weight: bold;
+			i{
+				font-size: 26px;
+				font-weight: bold;
+			}
+		}
+		.spical-offer {
+			background-color: $mainColor;
+			padding: 10px 0;
+			margin-top: -14px;
+		}
+	}
+	.gray-p{
+		color: #adadad;
+		padding-bottom: 20px;
+		border-bottom: 5px solid $mainColor;
+	}
+	.b-body {
+		background-color: #FFF;
+		margin-top: -9px;
+		p{
+			padding: 10px 0px;
+			color: $pColor;
+		}
+	}
+	.num-two {
+	    margin-top: -36px;
+	}
+	.num-one , .num-three{
+		@include transition;
+		&:hover{
+	    	margin-top: -36px;
+		}
+	}
+}
+// /pricing section
+
+// testpmonials section
+.testi {
+	background-color: #FFF;
+	padding: 105px 0px;
+	min-height:700px;
+	position: relative;
+	.testi-headline {
+		h1{
+		margin: 0px;
+		padding-bottom: 55px;
+		margin-top: 10px;
+		}
+		h1:after{
+		content: "";
+	    display: block;
+	    position: absolute;
+	    top: 180px;
+   		left: 639px;
+	    width: 77px;
+	    border-bottom: 2px solid $mainColor;
+		}
+		p{
+			color: $pColor;
+			font-size: 14px;
+			padding-bottom: 60px;
+		}
+	}
+	.dialog{
+		color: $pColor;
+		background-color: #f5f5f5;
+		width: 280px;
+		padding: 22px 15px;
+		border-radius: 5px;
+	}
+	.dialog:after{
+		content: "";
+	    display: block;
+	    position: absolute;
+	    top: 162px;
+    	left: 53px;
+	    width: 0;
+	    height: 0;
+	    border-top: 20px solid #f5f5f5;
+	    border-right: 15px solid transparent;
+	    border-left: 15px solid transparent;
+		@include transition;
+	}
+	img{
+		margin-top: 20px;
+		float: left;
+	}
+	h3 {
+		font-weight: bold;
+		margin-left: 85px;
+		margin-bottom: 0px;
+		margin-top: 45px;
+	}
+	.last-p{
+		color: $pColor;
+		margin-left: 87px;
+		margin-bottom: 0px;
+	}
+	.clients{
+		@include transition;
+		height: 300px;
+		width: 320px;
+		padding: 20px 18px;
+		&:hover{
+			@include boxshadow (2px 2px 30px #ccc);
+			height: 300px;
+			width: 320px;
+			border-radius: 5px;	
+		}
+	}
+}
+// /testpmonials section
+
+// design section
+.design {
+	background:url(../images/design.png) no-repeat center fixed;
+	min-height: 400px;
+	@include bgcover;
+	position: relative;
+	.overlay {
+		background: rgba(2,2,2,0.4);
+		min-height: 400px;
+	}
+	h1 {
+		color: #FFF;
+		padding-top: 72px;
+	}
+	h1:after{
+		content: "";
+	    display: block;
+	    position: absolute;
+	    top: 170px;
+   		left: 639px;
+	    width: 77px;
+	    border-bottom: 2px solid #FFF;
+	}
+	p{
+		color: #b9b9b9;
+		margin-top: 80px;
+	}
+	.download {
+		background-color: transparent;
+		border: 2px solid #FFF;
+		padding: 10px 30px;
+		color: #FFF;
+		margin-top: 50px;
+		@include transition;
+		&:hover{
+			background-color: $mainColor;
+			border:2px solid $mainColor;
+			@include transform (scale(1.1,1.1));
+		}
+	}
+	a{
+		text-decoration: none;
+	}
+}
+// /design section
+
+// contact section
+.contact {
+	padding: 105px 0px;
+	background-color: #FFF;
+	position: relative;
+	h1{
+		margin: 0px;
+		padding-bottom: 55px;
+		margin-top: 10px;
+		}
+		h1:after{
+		content: "";
+	    display: block;
+	    position: absolute;
+	    top: 180px;
+   		left: 639px;
+	    width: 77px;
+	    border-bottom: 2px solid $mainColor;
+		}
+		p{
+			color: $pColor;
+			font-size: 14px;
+			padding-bottom: 60px;
+		}
+		form{
+			.form-control {
+				border-radius: 0;
+				border:none;
+				@include boxshadow (none);
+				border-bottom: 1px solid #d6d6d6;
+				width: 80%;
+				margin: 0 auto 40px;
+			}
+			button{
+				background-color: $mainColor;
+				border-color:  $mainColor;
+				padding: 12px 20px;
+				font-size: 16px;
+				@include transition;
+				&:hover{
+					background-color: #ee8235;
+					border-color: #ee8235;
+				}
+			}
+			a:hover {
+				text-decoration: none;
+			}
+			input::placeholder
+			{
+				color:#d6d6d6;
+			}
+			textarea::placeholder {
+				color: #d6d6d6;
+			}
+			} 		
+}
+// /contact section
+
+// footer section
+.footer {
+	background-color: #000;
+	padding: 20px 0;
+	a {
+		text-decoration: none;
+	}
+	i{
+		font-size: 26px;
+		padding:0px 10px;
+		color: #CCC;
+		padding-bottom: 10px;
+		@include transition;
+		&:hover{
+			color: #FFF;
+		}
+	}
+	p{
+		color: $pColor;
+		margin-bottom: 0;
+	}
+}
+// /footer section
+// ----------------------------------------------------------------------
+// start media 
+// smart phone & tablet 
+@media (max-width: 767px) {
+	.navbar-inverse .navbar-nav>li>a {
+		background-color: #000;
+	}
+	.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+		margin-top: 0;
+	}
+	.container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header{
+		margin-left: 0;
+	}
+	.navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover{
+		background-color: $mainColor;
+	}
+	.home {
+		form{
+			margin-top: 65px;
+    		margin-bottom: 65px;
+    		width: 100%;
+		}
+		.companyname {
+			text-align: center;
+		}
+		h2 {
+			text-align: center;
+		}
+		p{
+			text-align: center;
+		}
+		.download{
+			margin-left: 280px;
+		}
+	}
+	.social-media {
+		h2,p {
+			text-align: center;
+		}
+	}
+	.tabs {
+		padding: 50px 0;
+		.tab{
+			width: 100%;
+			text-align: center;
+			height: 70px;
+			padding: 26px 12px;
+		}
+		h2{
+			text-align: center;
+			margin-top: 50px;
+		}
+		p{
+			text-align: center;
+			width: 100%;
+		}
+		button {
+			margin-left: 280px;
+		}
+	}
+	.about-section {
+		padding: 40px 0;
+		img{
+			margin: 50px auto;
+		}
+		h2,p,{
+			text-align: center;
+			width: 100%;
+		}
+		h2:after{
+			display: none;
+		}
+		i{
+			float: none;
+			margin: 0px 326px;
+			font-size: 50px;
+			padding: 12px 0;
+			width: 68px;
+			height: 68px;
+			margin-bottom: 15px;
+		}
+		h4{
+			display: none;
+		}
+		.media-img{
+			margin: auto 130px;
+		}
+	}
+	.services .services-headline h1:after{
+		display: none;
+	}
+	.services {
+		p{
+			margin-bottom: 30px;
+		}
+	}
+	.pricing .pricing-headline h1:after,
+	.testi .testi-headline h1:after,
+	.design h1:after,
+	.contact h1:after{
+		display: none;
+	}
+	.b-body {
+		margin-bottom: 50px;
+	}
+	.pricing .num-one:hover, .pricing .num-three:hover {
+		margin-top: 0;
+	}
+	.testi{
+		.clients{
+			margin: 10px auto;
+		}
+		.dialog:after{
+			display: none;
+		}
+	}
+	.services .services-headline p{
+		margin-bottom:-5px;
+	}
+	.pricing .num-one{
+		margin-bottom: 75px;
+	}
+	.design p{
+		margin-top: 67px;
+	}
+}
+@media (min-width: 768px) and (max-width: 991px) {
+	.navbar-inverse .navbar-nav>li>a {
+		background-color: #000;
+	}
+	.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+		margin-top: 0;
+	}
+	.container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header{
+		margin-left: 0;
+	}
+	.navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover{
+		background-color: $mainColor;
+	}
+	.home {
+		form{
+			margin-top: 65px;
+    		margin-bottom: 65px;
+    		width: 100%;
+		}
+		.home-hr{
+		margin-left: 320px;
+		}
+		.companyname {
+			text-align: center;
+		}
+		h2 {
+			text-align: center;
+		}
+		p{
+			text-align: center;
+		}
+		.download{
+			margin-left: 300px;
+		}
+	}
+	.social-media {
+		h2,p {
+			text-align: center;
+		}
+	}
+	.tabs {
+		padding: 50px 0;
+		.tab{
+			width: 100%;
+			text-align: center;
+			height: 70px;
+			padding: 26px 12px;
+		}
+		h2{
+			text-align: center;
+			margin-top: 50px;
+		}
+		p{
+			text-align: center;
+			width: 100%;
+		}
+		button {
+			margin-left: 300px;
+		}
+	}
+	.about-section {
+		padding: 40px 0;
+		img{
+			margin: 50px auto;
+		}
+		h2,p,{
+			text-align: center;
+			width: 100%;
+		}
+		h2:after{
+			display: none;
+		}
+		i{
+			float: none;
+			margin: 0px 326px;
+			font-size: 50px;
+			padding: 12px 0;
+			width: 68px;
+			height: 68px;
+			margin-bottom: 15px;
+		}
+		h4{
+			display: none;
+		}
+		.media-img{
+			margin: auto 130px;
+		}
+	}
+	.services .services-headline h1:after{
+		display: none;
+	}
+	.services {
+		p{
+			margin-bottom: 30px;
+		}
+	}
+	.pricing .pricing-headline h1:after,
+	.testi .testi-headline h1:after,
+	.design h1:after,
+	.contact h1:after{
+		display: none;
+	}
+	.b-body {
+		margin-bottom: 50px;
+	}
+	.pricing .num-one:hover, .pricing .num-three:hover {
+		margin-top: 0;
+	}
+	.testi{
+		.clients{
+			margin: 10px auto;
+		}
+		.dialog:after{
+			display: none;
+		}
+	}
+	.services .services-headline p{
+		margin-bottom:-5px;
+	}
+	.pricing .num-one{
+		margin-bottom: 75px;
+	}
+	.design p{
+		margin-top: 67px;
+	}
+}
+@media (min-width: 1400px){
+	.services .services-headline h1:after,
+	.pricing .pricing-headline h1:after,
+	.testi .testi-headline h1:after,
+	.design h1:after,
+	.contact h1:after{
+		left: 795px;
+	}
+}
